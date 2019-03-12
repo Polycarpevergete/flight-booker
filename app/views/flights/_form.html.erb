@@ -1,0 +1,39 @@
+<%= form_tag(flights_path method: :get) do %>
+    From planet <%= text_field_tag :planet_departure_id, params[:planet_departure_id] %>
+<%= submit_tag 'Search' %>
+<% end %>
+
+From
+<%= collection_select(:planet, :planet_id, Planet.all, :id, :code) %>
+To
+<%= collection_select(:planet, :planet_id, Planet.all, :id, :code)%>
+
+
+<h1> Flight seach form </h1>
+
+<select name = "flight_id">
+  <% @flights.each do |f|%>
+    <option value = "<%= f.from_planet.id %>"> <%= f.from_planet.code %> </option>
+<% end %>
+</select>
+
+<select name = "flight_id">
+  <%@flights.each do |f| %>
+    <option value = "<%= f.to_planet.id%>"> <%= f.to_planet.code %></option>
+<% end %>
+</select>
+
+<select name = "number_passengers">
+ <% passengers_array = [1,2,3,4] %>
+ <%= options_for_select(passengers_array) %>
+</select>
+
+
+
+<h2> Options for select </h2>
+<% flights_array = @flights.map { |flight| [flight.id, flight.from_planet.code] } %>
+<%= options_for_select(flights_array) %>
+
+<h3> Options from collection </h3>
+<%= options_from_collection_for_select(Flight.all, :id, :from_planet)%>
+

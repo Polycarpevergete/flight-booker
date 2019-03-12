@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planet_departure_id: 1
+  planet_arrival_id: 1
+  start_datetime: 2019-03-11 11:10:22
+  flight_duration: 2019-03-11 11:10:22
+
+two:
+  planet_departure_id: 1
+  planet_arrival_id: 1
+  start_datetime: 2019-03-11 11:10:22
+  flight_duration: 2019-03-11 11:10:22

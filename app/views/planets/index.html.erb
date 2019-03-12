@@ -1,0 +1,9 @@
+<h1> Planets </h1>
+<%= @planets %>
+
+<h1> Planet ID </h1>
+<select name = "planet_code">
+  <% @planets.each do |p|%>
+     <option value= "<%= p.id %>"> <%= p.code %> </option>
+<% end %>
+</select>
